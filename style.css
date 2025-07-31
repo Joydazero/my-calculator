@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* 모든 요소의 기본 여백 제거 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* HTML과 Body의 기본 설정 */
+html, body {
+    height: 100%;
+    font-size:16px;
+}
+:root{
+    --main-red: #FF5F58;
+    --main-yellow : #FEBC2E;
+    --main-green : #28C840 ;
+    --main-bg : #4D4B4B ;
+    --display-bg : #4D4B4B ;
+    --btn-text-style-bk : #000;
+    --btn-text-style-wht : #fff;
+    --btn-bg-num : #6F6F70; 
+    --btn-bg-last : #FF9500; 
+    --btn-bg-op : #8E8F8F; 
+}   
+#container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+/*layout*/
+.calculator-container{  
+    display:flex;
+    align-items:stretch;
+    justify-content: space-between;
+    flex-direction: column;
+    width:100%;
+    height:100vh;    
+    box-sizing: border-box;
+    padding:20px 20px;
+    max-width:350px;
+    max-height:515px;
+    background:var(--main-bg);
+    border:1px solid #71706F;
+    border-radius:.8rem;
+    outline:1px solid #000;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.calculator-container .display__show{
+    width:100%;
+    height:100%;
+    line-height:1;
+    display:flex;
+    align-items: center;
+}
+.calculator-container .display{    
+    box-sizing: border-box;
+    padding:5px;
+    flex:1;
+    background:var(--display-bg);
+    margin:0 5px;        
+    display:flex;
+    align-self: center;
+    justify-content: flex-end;
+    width:100%;
+}
+.calculator-container .display #displayNumber{
+    height:3.125rem;
+    width:100%;
+    border-radius:.62rem;
+    padding:.62rem;
+    border:0 none;
+    text-align:right;
+    cursor: none;
+    caret-color: transparent;
+    background:var(--display-bg);
+    color:#fff;
+    font-size:1.875rem;
+}
+.calculator-container .display #displayNumber::placeholder{
+    color:#fff;
+    font-size:1.875rem;
+}
+.calculator-container .display #displayNumber:active,
+.calculator-container .display #displayNumber:focus{
+    outline: none;
+    cursor: none;
+}
+.calculator-container .buttons{    
+    box-sizing: border-box;
+    flex:3;
+}
+.calculator-container .controls{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    box-sizing: border-box;
+    padding:10px 5px;
+}
+/* btns */
+.controls .btn{
+    border-radius:50%;
+    border:0 none;
+    width:20px;
+    height:20px;    
+    font-size:0;
+    text-indent:-9999px;   
+}
+.btn__close{
+    background-color: var(--main-red);
+}
+.btn__minimize{
+    background-color: var(--main-yellow);
+}
+.btn__restore{
+    background-color: var(--main-green);
+}
+main.buttons{ 
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    gap:5px;
+    padding-left:5px;
+}
+main.buttons > .button{ 
+    height:4rem;
+    background:var(--btn-bg-num);
+    flex: 0 0 calc( 25% - 5px );
+    box-sizing:border-box;
+    font-size:1.2rem;
+    color:var(--btn-text-style-wht);
+    font-weight:400;
+    border:0 none;
+    border:1px solid var(--btn-bg-num);
+    border-radius:.5rem;
+    box-sizing: border-box;
+    user-select: none;
+}
+main.buttons > .button.function{
+    background-color:var(--btn-bg-op);
+}
+
+main.buttons > .button:nth-child(4n),
+main.buttons > .button:last-child{
+    background:var(--btn-bg-last);
+    border:1px solid var(--btn-bg-last) ;
+}
+main.buttons > .button.number.zero{
+     flex: 0 0 calc( 50% - 5px );
+}
+main.buttons > .button:hover{
+   background-color:#b8b8b8;
+   transition: background-color .3s cubic-bezier(0.37, 0.03, 0.63, 0.97);
+   color:#000;
+}
+main.buttons > .button:active{
+   background-color:#1a1a1a;
+   transition: all .3s cubic-bezier(0.37, 0.03, 0.63, 0.97);
+   color:#fff;
+   border:1px solid #575757;
+}
+main.buttons > .button:nth-child(4n):hover,
+main.buttons > .button:last-child:hover{
+   background-color:rgb(228, 102, 6);
+   border:1px solid rgb(228, 102, 6);
+   transition: all .3s cubic-bezier(0.37, 0.03, 0.63, 0.97);
+}
+main.buttons > .button:nth-child(4n):active,
+main.buttons > .button:last-child:active{
+   background-color:#1a1a1a;
+   transition: all .3s cubic-bezier(0.37, 0.03, 0.63, 0.97);
+   color:#fff;
+   border:1px solid #575757;
+}

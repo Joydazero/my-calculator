@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+    <link rel="stylesheet" href="./style.css">    
+</head>
+<body>
+    <div id="container">
+        <div class="calculator-container">
+            <nav class="controls">
+                <button type="button" class="btn btn__close" title="닫기">닫기</button>
+                <button type="button" class="btn btn__minimize" title="최소화">최소화</button>
+                <button type="button" class="btn btn__restore" title="복원">복원</button>
+            </nav>
+            <header class="display">
+                <div class="display__show">
+                    <p class="display__show_num" id="displayNumber">0</p>
+                </div>
+            </header>
+            <main class="buttons">
+                <button class="button function" title="C" id="clearBtn">C</button>
+                <button class="button function" title="±">±</button>
+                <button class="button function" title="%">%</button>
+                <button class="button operator" title="/">/</button>
+                <button class="button number" title="7">7</button>
+                <button class="button number" title="8">8</button>
+                <button class="button number" title="9">9</button>
+                <button class="button operator" title="*">*</button>
+                <button class="button number" title="4">4</button>
+                <button class="button number" title="5">5</button>
+                <button class="button number" title="6">6</button>
+                <button class="button operator" title="-">-</button>
+                <button class="button number" title="1">1</button>
+                <button class="button number" title="2">2</button>
+                <button class="button number" title="3">3</button>
+                <button class="button operator" title="+">+</button>
+                <button class="button number zero" title="0">0</button>
+                <button class="button dot" id="decimal_point" title=".">.</button>
+                <button class="button operator" id="equal_sign" title="=">=</button>
+            </main>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <!-- <script src="./script22.js"></script> -->
+</body>
+</html>
