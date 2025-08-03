@@ -112,4 +112,52 @@ allBtn.forEach( (btn) => {
 );
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const btnMinimize = document.querySelector('.btn__minimize');
+  const btnResturn = document.querySelector('.btn__return');
+  const btnOpenCar = document.querySelector('.btn__open_cal');
+  const btnClose = document.querySelector('.btn__close');
+  const btnRestore = document.querySelector('.btn__restore');
+  const btnNomalSize = document.querySelector('.btn__nomal_size');
+  const el = document.getElementById('calculator-container');
 
+  console.log('btnMinimize:', btnMinimize);
+  console.log('btnRestore:', btnResturn);
+
+  btnMinimize?.addEventListener("click", function () {
+    el.className = '';
+    console.log('minimize clicked');
+    el?.classList.add('minimize');
+    btnResturn.classList.add('show');
+  });
+
+  btnResturn?.addEventListener("click", function (e) {
+    el.className = '';
+    e.target.classList.remove('show');
+    console.log('return clicked');
+    el?.classList.remove('minimize');   
+  });
+
+  btnClose?.addEventListener("click", function () {
+    el.className = '';
+    console.log('btnClose clicked');
+    el?.classList.add('close');
+    btnOpenCar.classList.add('open');
+  });
+
+  btnOpenCar?.addEventListener("click", function (e) {    
+    e.target.classList.remove('open');
+    console.log('btnOpenCar clicked');
+    el?.classList.remove('close');   
+  });
+
+
+  btnRestore?.addEventListener("click", function (e) {    
+    el?.classList.toggle('expand');    
+    btnRestore.classList.toggle('expand');
+  });
+ 
+
+//
+
+});
